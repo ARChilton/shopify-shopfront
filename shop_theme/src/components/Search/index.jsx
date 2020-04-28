@@ -112,6 +112,7 @@ const Search = () => {
                   id='search'
                   type='text'
                   value={query}
+                  autoFocus
                   onChange={search}
                   placeholder={searchInputLabel}
                 />
