@@ -97,10 +97,10 @@ module.exports = ({
       // Menu types: "header", "collection", "product", "link"
       menu: {},
       footerLinks: [],
-      locales: 'en-US',
-      currency: 'USD',
+      locales: 'en-UK',
+      currency: 'GBP',
       productsPerCollectionPage: '9',
       articlesPerBlogPage: '6',
     },
   },
-});
+})
