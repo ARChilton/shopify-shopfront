@@ -1,0 +1,41 @@
+{
+  "projectName": "gatsby-theme-storefront-shopify",
+  "projectOwner": "GatsbyStorefront",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "none",
+  "contributors": [
+    {
+      "login": "paveli",
+      "name": "Pavel",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/202422?v=4",
+      "profile": "https://pavelivanov.net",
+      "contributions": [
+        "code",
+        "design",
+        "doc",
+        "example",
+        "ideas",
+        "projectManagement",
+        "review"
+      ]
+    },
+    {
+      "login": "mimibar",
+      "name": "mimibar",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2718783?v=4",
+      "profile": "https://github.com/mimibar",
+      "contributions": [
+        "bug",
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true
+}
