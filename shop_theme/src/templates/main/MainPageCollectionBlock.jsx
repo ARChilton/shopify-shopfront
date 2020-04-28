@@ -38,56 +38,56 @@ const MainPageCollectionBlock = (props) => {
   const { textColor = 'primary', textBgColor = 'white' } = props
 
   return (
-    <StyledBox sx={{ position: 'relative' }}>
-      <Box sx={{ overflow: 'hidden' }}>
-        {image ? (
-          <Image fluid={image.localFile.childImageSharp.fluid} alt={title} />
-        ) : (
-          <Box pt='60%' />
-        )}
-      </Box>
+    <GatsbyLink
+      to={shopifyThemePath}
+      sx={{
+        color: textColor,
+        textDecoration: 'none',
+        ':hover,:focus,.active': {
+          color: textColor,
+          textDecoration: 'none',
+        },
+      }}
+    >
+      <StyledBox sx={{ position: 'relative' }}>
+        <Box sx={{ overflow: 'hidden' }}>
+          {image ? (
+            <Image fluid={image.localFile.childImageSharp.fluid} alt={title} />
+          ) : (
+            <Box pt='60%' />
+          )}
+        </Box>
 
-      <Box
-        sx={{
-          position: ['absolute'],
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-        }}
-      >
-        <Flex
+        <Box
           sx={{
-            flexDirection: ['column'],
-            justifyContent: 'flex-end',
-            alignItems: ['center', 'flex-start'],
+            position: ['absolute'],
+            top: 0,
+            left: 0,
             width: '100%',
             height: '100%',
           }}
         >
-          <Box
-            width={['auto', 1 / 3]}
+          <Flex
             sx={{
-              ml: [1, '5%'],
-              my: ['auto', '5%'],
-              backgroundColor: [textBgColor, 'transparent'],
-              opacity: [0.8, 1],
-              px: ['3%', 0],
-              py: ['2%', 0],
+              flexDirection: ['column'],
+              justifyContent: 'flex-end',
+              alignItems: ['center', 'flex-start'],
+              width: '100%',
+              height: '100%',
             }}
           >
-            {' '}
-            <GatsbyLink
-              to={shopifyThemePath}
+            <Box
+              width={['auto', 1 / 3]}
               sx={{
-                color: textColor,
-                textDecoration: 'none',
-                ':hover,:focus,.active': {
-                  color: textColor,
-                  textDecoration: 'none',
-                },
+                ml: [1, '5%'],
+                my: ['auto', '5%'],
+                backgroundColor: [textBgColor, 'transparent'],
+                opacity: [0.8, 1],
+                px: ['3%', 0],
+                py: ['2%', 0],
               }}
             >
+              {' '}
               <Heading
                 as='h2'
                 fontSize={[30, 36, 42]}
@@ -98,11 +98,11 @@ const MainPageCollectionBlock = (props) => {
               <Text fontSize={[1, 2, 3]} sx={{ display: ['none', 'block'] }}>
                 {substrDescription(description, 80)}
               </Text>
-            </GatsbyLink>
-          </Box>
-        </Flex>
-      </Box>
-    </StyledBox>
+            </Box>
+          </Flex>
+        </Box>
+      </StyledBox>
+    </GatsbyLink>
   )
 }
 
