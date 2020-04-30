@@ -45,8 +45,8 @@ const IndividualProduct = ({ product }) => {
   const minDisplayPrice = formatPrice(minPrice, locales, currency)
   const maxDisplayPrice = formatPrice(maxPrice, locales, currency)
 
-  const compareAtPrice = variants[0].compareAtPrice
-  const compareAtPriceFmormatted = formatPrice(
+  const { compareAtPrice } = variants[0]
+  const compareAtPriceFormatted = formatPrice(
     variants[0].compareAtPrice,
     locales,
     currency
@@ -137,12 +137,12 @@ const IndividualProduct = ({ product }) => {
             m={2}
             sx={{ display: 'inline-block', position: 'absolute', 'z-index': 9 }}
           >
-            {tags.map((tag) => {
+            {tags.map(tag => {
               if (tag === 'new' && availableForSale) {
                 return (
                   <Badge
                     text={strings.new}
-                    bgColor='badgeNew'
+                    bgColor="badgeNew"
                     my={1}
                     key={strings.new}
                   />
@@ -171,8 +171,8 @@ const IndividualProduct = ({ product }) => {
                 text={strings.soldout}
                 width={90}
                 height={35}
-                bgColor='badgeSoldout'
-                format='box'
+                bgColor="badgeSoldout"
+                format="box"
                 my={1}
                 key={strings.soldout}
               />
@@ -191,7 +191,7 @@ const IndividualProduct = ({ product }) => {
                   fluid={firstImage.localFile.childImageSharp.fluid}
                 />
               ) : (
-                <NoImage width='100%' height='100%' color='grey' p={4} />
+                <NoImage width="100%" height="100%" color="grey" p={4} />
               )}
             </GatsbyLink>
           </Box>
@@ -214,7 +214,7 @@ const IndividualProduct = ({ product }) => {
               />
             ) : (
               <AddToCartStyled
-                isSelectOptions='true'
+                isSelectOptions="true"
                 title={strings.selectOptions}
                 to={shopifyThemePath}
                 sx={{
@@ -234,7 +234,7 @@ const IndividualProduct = ({ product }) => {
             )}
 
             <Title
-              as='h3'
+              as="h3"
               sx={{
                 fontSize: [1, 2, 3],
                 fontFamily: 'body',
@@ -249,7 +249,7 @@ const IndividualProduct = ({ product }) => {
           <Text sx={{ color: 'black', fontSize: [1], fontWeight: 'bold' }}>
             {minDisplayPrice} {hasPriceRange && `- ${maxDisplayPrice}`}{' '}
             {hasOneVariant && compareAtPrice > minPrice && (
-              <CompareAtPrice>{compareAtPriceFmormatted}</CompareAtPrice>
+              <CompareAtPrice>{compareAtPriceFormatted}</CompareAtPrice>
             )}
           </Text>
         </Box>
