@@ -187,7 +187,7 @@ const IndividualProduct = ({ product }) => {
             >
               {firstImage && firstImage.localFile ? (
                 <Image
-                  alt={title}
+                  alt={firstImage.altText || title}
                   fluid={firstImage.localFile.childImageSharp.fluid}
                 />
               ) : (

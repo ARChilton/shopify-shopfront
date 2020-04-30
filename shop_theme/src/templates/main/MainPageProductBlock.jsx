@@ -28,23 +28,25 @@ const StyledBox = styled(Box)`
   }
 `
 
-const MainPageProductBlock = (props) => {
-  const {
+const MainPageProductBlock = ({
+  textColor = 'primary',
+  textBgColor = 'white',
+  product: {
     title,
     description,
     fields: { shopifyThemePath, firstImage },
-  } = props.product
-  const { textColor = 'primary', textBgColor = 'white' } = props
+  },
+}) => {
   return (
     <StyledBox sx={{ position: 'relative' }}>
       <Box sx={{ overflow: 'hidden' }}>
         {firstImage ? (
           <Image
             fluid={firstImage.localFile.childImageSharp.fluid}
-            alt={title}
+            alt={firstImage.altText || title}
           />
         ) : (
-          <Box pt='60%' />
+          <Box pt="60%" />
         )}
       </Box>
 
@@ -90,7 +92,7 @@ const MainPageProductBlock = (props) => {
               }}
             >
               <Heading
-                as='h2'
+                as="h2"
                 fontSize={[30, 36, 42]}
                 textAlign={['center', 'left']}
               >
