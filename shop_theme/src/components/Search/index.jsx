@@ -35,6 +35,11 @@ const DisabledArea = styled(Box)`
   height: 100%;
   overflow: 'hidden';
 `
+const SearchInput = styled(Input)`
+  :focus {
+    outline: none;
+  }
+`
 
 const SearchItem = styled(Box)`
   :hover {
@@ -95,6 +100,7 @@ const Search = () => {
                 justifyContent="space-between"
                 alignItems="center"
                 mb={2}
+                p={2}
                 width={1}
               >
                 <Box>{searchLabel}</Box>
@@ -108,11 +114,12 @@ const Search = () => {
                 </Box>
               </Flex>
               <Box>
-                <Input
+                <SearchInput
                   id="search"
                   type="text"
                   value={query}
                   autoFocus
+                  autoComplete={false}
                   onChange={search}
                   placeholder={searchInputLabel}
                 />
