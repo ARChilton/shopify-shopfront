@@ -55,11 +55,11 @@ module.exports = {
           type: 'carousel',
           children: [
             {
-              name: 'test bolt collection',
+              name: 'Spoilers',
               type: 'collection',
-              handle: 'test-bolt-collection',
-              textColor: 'black',
-              textBgColor: 'white',
+              handle: 'spoilers',
+              textColor: 'white',
+              textBgColor: 'primary',
             },
             {
               name: 'Suspension kits',
@@ -69,12 +69,13 @@ module.exports = {
               textBgColor: 'white',
             },
             {
-              name: 'bolt kit',
-              type: 'product',
-              handle: 'bolt-kit',
+              name: 'Bolt Kits',
+              type: 'collection',
+              handle: 'bolts',
               textColor: 'white',
               textBgColor: 'primary',
             },
+
             // {
             //   name: 'Silk Summer Top',
             //   type: 'product',
@@ -84,10 +85,25 @@ module.exports = {
             // },
           ],
         },
+
         {
-          name: 'Bolt collection',
-          type: 'collection',
-          handle: 'test-bolt-collection',
+          name: 'bolt kit',
+          type: 'product',
+          handle: 'bolt-kit',
+          textColor: 'white',
+          textBgColor: 'primary',
+        },
+        {
+          name: 'dip spoiler',
+          type: 'product',
+          handle: 'dip-spoiler',
+          textColor: 'white',
+          textBgColor: 'primary',
+        },
+        {
+          name: 'suspension kits',
+          type: 'product',
+          handle: 'suspension-kit',
           textColor: 'white',
           textBgColor: 'primary',
         },
@@ -98,6 +114,21 @@ module.exports = {
           textColor: 'white',
           textBgColor: 'primary',
         },
+        {
+          name: 'dip spoiler',
+          type: 'product',
+          handle: 'dip-spoiler',
+          textColor: 'white',
+          textBgColor: 'primary',
+        },
+        {
+          name: 'suspension kits',
+          type: 'product',
+          handle: 'suspension-kit',
+          textColor: 'white',
+          textBgColor: 'primary',
+        },
+
         // {
         //   name: 'Garden',
         //   type: 'collection',
