@@ -8,6 +8,7 @@
     "start": "yarn workspace shop start",
     "build": "yarn workspace shop build",
     "serve": "yarn workspace shop serve",
-    "clean": "yarn workspace shop clean"
+    "clean": "yarn workspace shop clean",
+    "installAll": "yarn workspace shop & yarn workspace shop_theme"
   }
 }
