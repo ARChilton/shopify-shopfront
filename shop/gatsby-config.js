@@ -85,9 +85,16 @@ module.exports = {
           ],
         },
         {
-          name: 'Apparel',
+          name: 'Bolt collection',
           type: 'collection',
           handle: 'test-bolt-collection',
+          textColor: 'white',
+          textBgColor: 'primary',
+        },
+        {
+          name: 'bolt kit',
+          type: 'product',
+          handle: 'bolt-kit',
           textColor: 'white',
           textBgColor: 'primary',
         },
