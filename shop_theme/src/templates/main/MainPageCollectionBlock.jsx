@@ -28,7 +28,7 @@ const StyledBox = styled(Box)`
   }
 `
 
-const MainPageCollectionBlock = (props) => {
+const MainPageCollectionBlock = props => {
   const {
     title,
     description,
@@ -54,7 +54,7 @@ const MainPageCollectionBlock = (props) => {
           {image ? (
             <Image fluid={image.localFile.childImageSharp.fluid} alt={title} />
           ) : (
-            <Box pt='60%' />
+            <Box pt="60%" />
           )}
         </Box>
 
@@ -89,7 +89,7 @@ const MainPageCollectionBlock = (props) => {
             >
               {' '}
               <Heading
-                as='h2'
+                as="h2"
                 fontSize={[30, 36, 42]}
                 textAlign={['center', 'left']}
               >

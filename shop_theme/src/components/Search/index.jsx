@@ -61,7 +61,7 @@ const Search = () => {
   const getOrCreateIndex = () =>
     index ? index : Index.load(data.siteSearchIndex.index)
 
-  const search = (evt) => {
+  const search = evt => {
     const query = evt.target.value
     index = getOrCreateIndex()
     setQuery(query)
@@ -81,36 +81,36 @@ const Search = () => {
   return (
     <React.Fragment>
       <SearchIcon
-        width='24px'
-        height='24px'
+        width="24px"
+        height="24px"
         onClick={toggleSidebar}
         sx={{ cursor: 'pointer' }}
       />
       {showSidebar ? (
         <React.Fragment>
           <Sidebar width={[1, 1 / 3, 1 / 4]} sx={{ bg: 'white' }}>
-            <Flex flexDirection='column' m={[1, 2]}>
+            <Flex flexDirection="column" m={[1, 2]}>
               <Flex
                 onClick={toggleSidebar}
-                justifyContent='space-between'
-                alignItems='center'
+                justifyContent="space-between"
+                alignItems="center"
                 mb={2}
                 width={1}
               >
                 <Box>{searchLabel}</Box>
-                <Box ml='auto'>
+                <Box ml="auto">
                   <Close
-                    width='20px'
-                    height='20px'
-                    color='primary'
+                    width="20px"
+                    height="20px"
+                    color="primary"
                     sx={{ cursor: 'pointer' }}
                   />
                 </Box>
               </Flex>
               <Box>
                 <Input
-                  id='search'
-                  type='text'
+                  id="search"
+                  type="text"
                   value={query}
                   autoFocus
                   onChange={search}
@@ -118,11 +118,11 @@ const Search = () => {
                 />
               </Box>
               <Box>
-                {results.map((page) => (
+                {results.map(page => (
                   <SearchItem key={page.id} m={2}>
                     <Text
                       as={GatsbyLink}
-                      variant='searchLink'
+                      variant="searchLink"
                       to={page.shopifyThemePath}
                     >
                       <Box>{page.title}</Box>

@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import GatsbyImage from 'gatsby-image';
-import { Flex, Box } from 'rebass';
-import { useCurrentImageContext } from './CurrentImageContext';
+import React from 'react'
+import styled from '@emotion/styled'
+import GatsbyImage from 'gatsby-image'
+import { Flex, Box } from 'rebass'
+import { useCurrentImageContext } from './CurrentImageContext'
 
 const ThumbnailBox = styled(Box)(
   ({ theme, maxImageHeight, maxImageWidth, currentImageIndex, index }) => ({
@@ -14,7 +14,7 @@ const ThumbnailBox = styled(Box)(
       currentImageIndex !== index ? 'transparent' : theme.colors.primary
     }`,
   })
-);
+)
 
 const ThumbnailFlex = styled(Flex)(({ theme, transformPx }) => ({
   transition: '0.5s ease all',
@@ -22,7 +22,7 @@ const ThumbnailFlex = styled(Flex)(({ theme, transformPx }) => ({
   [theme.mediaQueries[1]]: {
     transform: `translateY(${transformPx}px)`,
   },
-}));
+}))
 
 function ProductGalleryThumbnails({
   images,
@@ -31,18 +31,18 @@ function ProductGalleryThumbnails({
   maxImageWidth = 100,
   maxContainerHeight = 500,
 }) {
-  const { currentImageIndex, setCurrentImageIndex } = useCurrentImageContext();
+  const { currentImageIndex, setCurrentImageIndex } = useCurrentImageContext()
 
   function calculateTransform() {
     if (currentImageIndex < 1) {
-      return 0;
+      return 0
     }
 
     if (currentImageIndex >= images.length - 1) {
-      return (images.length - 2.5) * -(maxImageHeight + 16);
+      return (images.length - 2.5) * -(maxImageHeight + 16)
     }
 
-    return (currentImageIndex - 1) * -(maxImageHeight + 8);
+    return (currentImageIndex - 1) * -(maxImageHeight + 8)
   }
 
   return (
@@ -77,7 +77,7 @@ function ProductGalleryThumbnails({
         ))}
       </ThumbnailFlex>
     </Box>
-  );
+  )
 }
 
-export default ProductGalleryThumbnails;
+export default ProductGalleryThumbnails
