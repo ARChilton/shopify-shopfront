@@ -1,7 +1,7 @@
 require('dotenv').config({ path: `.env` })
 const flattenMenu = require('shop_theme/src/utils/flattenMenu')
-
 module.exports = {
+  pathPrefix: process.env.GATSBY_DEMO_DEPLOY_REPO,
   plugins: [
     {
       resolve: 'shop_theme',
@@ -16,15 +16,15 @@ module.exports = {
     },
   ],
   siteMetadata: {
-    siteUrl: 'https://archilton.com',
+    siteUrl: 'https://archilton.github.io/shopify-shopfront',
     gatsbyStorefrontConfig: {
       storeName: 'archilton testing',
       storeDescription: 'Demo store description',
       email: 'infoshop_theme.com',
-      company: 'Adam',
-      location: 'New York, NY',
+      company: 'ARChilton Demo',
+      location: 'Demoville',
       address: '1 Centre St.',
-      phone: '+1 (800) 123-1234',
+      phone: '+44 7777777777',
       workingDays: 'Mon - Fri',
       workingHours: '8AM - 6PM',
       logoUrl: 'https://checkpointlive.com/img/icon.svg',
@@ -185,166 +185,16 @@ module.exports = {
         type: 'top',
         children: [
           {
-            name: "Women's",
-            type: 'header',
-            handle: '',
-            link: '',
-            children: [
-              {
-                name: 'Bolts',
-                type: 'collection',
-                handle: 'test-bolt-collection',
-              },
-            ],
+            name: 'Bolt Kits',
+            type: 'collection',
+            handle: 'bolts',
           },
           {
-            name: "Men's",
-            type: 'header',
-            children: [
-              {
-                name: 'Bolts',
-                type: 'collection',
-                handle: 'test-bolt-collection',
-              },
-              {
-                name: 'External links',
-                type: 'header',
-                children: [
-                  {
-                    name: 'External link 2',
-                    type: 'external',
-                    link: 'https://amazon.com',
-                  },
-                  //     {
-                  //       name: 'External link 3',
-                  //       type: 'external',
-                  //       link: 'https://amazon.com',
-                  //     },
-                  //     {
-                  //       name: 'External link 2',
-                  //       type: 'external',
-                  //       link: 'https://amazon.com',
-                  //     },
-                  //     {
-                  //       name: 'External link 3',
-                  //       type: 'external',
-                  //       link: 'https://amazon.com',
-                  //     },
-                  //     {
-                  //       name: 'External link 2',
-                  //       type: 'external',
-                  //       link: 'https://amazon.com',
-                  //     },
-                  //     {
-                  //       name: 'External link 3',
-                  //       type: 'external',
-                  //       link: 'https://amazon.com',
-                  //     },
-                  //     {
-                  //       name: 'External link 2',
-                  //       type: 'external',
-                  //       link: 'https://amazon.com',
-                  //     },
-                  //     {
-                  //       name: 'External link 3',
-                  //       type: 'external',
-                  //       link: 'https://amazon.com',
-                  //     },
-                  //     {
-                  //       name: 'External link 2',
-                  //       type: 'external',
-                  //       link: 'https://amazon.com',
-                  //     },
-                  //     {
-                  //       name: 'External link 3',
-                  //       type: 'external',
-                  //       link: 'https://amazon.com',
-                  //     },
-                  //     {
-                  //       name: 'External link 2',
-                  //       type: 'external',
-                  //       link: 'https://amazon.com',
-                  //     },
-                  //     {
-                  //       name: 'External link 3',
-                  //       type: 'external',
-                  //       link: 'https://amazon.com',
-                  //     },
-                  //     {
-                  //       name: 'External link 2',
-                  //       type: 'external',
-                  //       link: 'https://amazon.com',
-                  //     },
-                  //     {
-                  //       name: 'External link 3',
-                  //       type: 'external',
-                  //       link: 'https://amazon.com',
-                  //     },
-                  //     {
-                  //       name: 'External link 2',
-                  //       type: 'external',
-                  //       link: 'https://amazon.com',
-                  //     },
-                  //     {
-                  //       name: 'External link 3',
-                  //       type: 'external',
-                  //       link: 'https://amazon.com',
-                  //     },
-                  //     {
-                  //       name: 'External link 2',
-                  //       type: 'external',
-                  //       link: 'https://amazon.com',
-                  //     },
-                  //     {
-                  //       name: 'External link 3',
-                  //       type: 'external',
-                  //       link: 'https://amazon.com',
-                  //     },
-                  //     {
-                  //       name: 'External link 2',
-                  //       type: 'external',
-                  //       link: 'https://amazon.com',
-                  //     },
-                  //     {
-                  //       name: 'External link 3',
-                  //       type: 'external',
-                  //       link: 'https://amazon.com',
-                  //     },
-                  //     {
-                  //       name: 'External link 2',
-                  //       type: 'external',
-                  //       link: 'https://amazon.com',
-                  //     },
-                  //     {
-                  //       name: 'External link 3',
-                  //       type: 'external',
-                  //       link: 'https://amazon.com',
-                  //     },
-                  //     {
-                  //       name: 'External link 2',
-                  //       type: 'external',
-                  //       link: 'https://amazon.com',
-                  //     },
-                  //     {
-                  //       name: 'External link 3',
-                  //       type: 'external',
-                  //       link: 'https://amazon.com',
-                  //     },
-                  //     {
-                  //       name: 'External link 2',
-                  //       type: 'external',
-                  //       link: 'https://amazon.com',
-                  //     },
-                  //     {
-                  //       name: 'External link 3',
-                  //       type: 'external',
-                  //       link: 'https://amazon.com',
-                  //     },
-                ],
-              },
-            ],
+            name: 'Suspension Kits',
+            type: 'collection',
+            handle: 'suspension',
           },
-          // { name: 'Blog', type: 'blog', handle: 'news' },
+          { name: 'Spoilers', type: 'collection', handle: 'spoilers' },
         ],
       }),
       footerLinks: [

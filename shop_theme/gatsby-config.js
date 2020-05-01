@@ -51,7 +51,7 @@ module.exports = ({
         display: `standalone`,
       },
     },
-    'gatsby-plugin-offline',
+    // 'gatsby-plugin-offline',
     'gatsby-plugin-robots-txt',
     'gatsby-plugin-lint-queries',
     {
@@ -63,9 +63,9 @@ module.exports = ({
         resolvers: {
           // For any node of type MarkdownRemark, list how to resolve the fields` values
           ShopifyProduct: {
-            title: (node) => node.title,
-            tags: (node) => node.tags,
-            shopifyThemePath: (node) => node.fields.shopifyThemePath,
+            title: node => node.title,
+            tags: node => node.tags,
+            shopifyThemePath: node => node.fields.shopifyThemePath,
           },
         },
       },
