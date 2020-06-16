@@ -569,7 +569,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       name: String
       link: String
     }
-    type ShopifyProductFieldsFirstImage {
+    type ShopifyProductImages{
       altText: String
     }
     type ShopifyProductFieldsFirstImage {
