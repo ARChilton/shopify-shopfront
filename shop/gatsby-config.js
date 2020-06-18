@@ -55,9 +55,9 @@ module.exports = {
           type: 'carousel',
           children: [
             {
-              name: 'Spoilers',
+              name: 'Bonnet Scoops',
               type: 'collection',
-              handle: 'spoilers',
+              handle: 'bonnet-scoops',
               textColor: 'white',
               textBgColor: 'primary',
             },
