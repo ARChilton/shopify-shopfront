@@ -27,7 +27,8 @@ module.exports = {
       phone: '+44 7777777777',
       workingDays: 'Mon - Fri',
       workingHours: '8AM - 6PM',
-      logoUrl: 'https://checkpointlive.com/img/icon.svg',
+      logoUrl:
+        'https://github.com/ARChilton/the-s-works/blob/master/the-s-works.jpg?raw=true',
       socialNetworks: [
         'https://facebook.com',
         'https://instagram.com',
@@ -55,23 +56,24 @@ module.exports = {
           type: 'carousel',
           children: [
             {
-              name: 'Bonnet Scoops',
+              name: 'New Car Parts',
               type: 'collection',
-              handle: 'bonnet-scoops',
-              textColor: 'white',
-              textBgColor: 'primary',
+              handle: 'new',
+              textColor: 'black',
+              textBgColor: 'white',
             },
+
             {
-              name: 'Suspension kits',
+              name: 'Used Car Parts',
               type: 'collection',
-              handle: 'suspension',
+              handle: 'used',
               textColor: 'black',
               textBgColor: 'white',
             },
             {
-              name: 'Bolt Kits',
+              name: 'Cars',
               type: 'collection',
-              handle: 'bolts',
+              handle: 'cars',
               textColor: 'white',
               textBgColor: 'primary',
             },
