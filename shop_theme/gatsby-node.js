@@ -578,6 +578,12 @@ exports.createSchemaCustomization = ({ actions }) => {
       originalSrc: String
       localFile: File
     }
+    type ShopifyProduct implements Node {
+      tags: [String]
+    }
+    type ShopifyProductVariant implements Node{
+      compareAtPrice: String
+    }
 `
 
   // In case using Shopify Lite plan GraphQL nodes for Articles and Pages are not created.
