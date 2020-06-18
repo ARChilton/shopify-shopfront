@@ -8,19 +8,10 @@ jobs:
     steps:
       - checkout
       - node/with-cache:
-
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies
-      - run: yarn
-      - save_cache:
-          paths:
-            - node_modules
-          key: v3-dependencies-{{ checksum "package.json" }}
-      - run: ls
-      - run: yarn deploy
+          steps:
+            - run: yarn
+            - run: echo ls
+            - run: yarn deploy
 
 workflows:
   build-and-deploy:
