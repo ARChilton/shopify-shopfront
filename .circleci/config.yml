@@ -13,10 +13,6 @@ jobs:
             - run: yarn deploy
 
 workflows:
-  test:
-    jobs:
-      - test
-
   build-and-deploy:
     jobs:
       - build-and-deploy
