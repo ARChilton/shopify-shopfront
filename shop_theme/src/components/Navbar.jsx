@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import { Flex, Text, Box } from 'rebass';
-import { useStaticQuery, graphql } from 'gatsby';
-import GatsbyLink from 'gatsby-link';
-import styled from '@emotion/styled';
-import { useScrollPosition } from '@n8tb1t/use-scroll-position';
+import React, { useState } from 'react'
+import { Flex, Text, Box } from 'rebass'
+import { useStaticQuery, graphql } from 'gatsby'
+import GatsbyLink from 'gatsby-link'
+import styled from '@emotion/styled'
+import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 
-import Menu from './Menu';
-import Search from './Search';
-import ShoppingBag from './Icons/ShoppingBag';
-import ShoppingCart from './Icons/ShoppingCart';
-import strings from './strings.json';
+import Menu from './Menu'
+import Search from './Search'
+import ShoppingBag from './Icons/ShoppingBag'
+import ShoppingCart from './Icons/ShoppingCart'
+import strings from './strings.json'
 
-const { ariaShoppingCartLabel, ariaHomaPageLinkLabel } = strings;
+const { ariaShoppingCartLabel, ariaHomaPageLinkLabel } = strings
 
 const NavbarBase = styled.nav`
   position: fixed;
@@ -19,30 +19,34 @@ const NavbarBase = styled.nav`
   left: 0;
   right: 0;
   z-index: 1030;
-`;
+`
 
 const Nav = styled(NavbarBase)`
   box-shadow: 0 0px 5px rgba(0, 0, 0, 0.2);
-  visibility: ${(props) => (props.show ? 'visible' : 'hidden')};
-  transition: all 200ms ${(props) => (props.show ? 'ease-in' : 'ease-out')};
-  transform: ${(props) => (props.show ? 'none' : 'translate(0, -100%)')};
-`;
+  visibility: ${props => (props.show ? 'visible' : 'hidden')};
+  transition: all 200ms ${props => (props.show ? 'ease-in' : 'ease-out')};
+  transform: ${props => (props.show ? 'none' : 'translate(0, -100%)')};
+`
 
-const Navbar = (props) => {
-  const [hideNavbarOnScroll, setHideNavbarOnScroll] = useState(true);
+const Logo = styled.img`
+  height: 56px;
+`
+
+const Navbar = props => {
+  const [hideNavbarOnScroll, setHideNavbarOnScroll] = useState(true)
 
   useScrollPosition(
     ({ prevPos, currPos }) => {
       // Note: prevPos.y > -12 is here to fix Nav component disappearing bug
       // due to elastic scrolling/bounce effect in mobile Safari.
-      const isShow = currPos.y > prevPos.y || prevPos.y > -12;
-      if (isShow !== hideNavbarOnScroll) setHideNavbarOnScroll(isShow);
+      const isShow = currPos.y > prevPos.y || prevPos.y > -12
+      if (isShow !== hideNavbarOnScroll) setHideNavbarOnScroll(isShow)
     },
     [hideNavbarOnScroll],
     null,
     false,
     100
-  );
+  )
 
   const data = useStaticQuery(graphql`
     {
@@ -62,15 +66,34 @@ const Navbar = (props) => {
           }
         }
       }
+      allShopifyCollection {
+        nodes {
+          handle
+          title
+          id
+        }
+      }
     }
-  `);
+  `)
 
   const {
     storeName,
     logoUrl,
     menu,
-  } = data.site.siteMetadata.gatsbyStorefrontConfig;
-
+  } = data.site.siteMetadata.gatsbyStorefrontConfig
+  const { nodes: collectionNodes } = data.allShopifyCollection
+  const menuLength = menu.length || 0
+  // takes collections straight from shopify
+  const collectionMenu = [
+    ...menu,
+    ...collectionNodes.map((c, i) => ({
+      ...c,
+      type: 'collection',
+      id: menuLength + 1 + i,
+      parentId: 0,
+      name: c.title,
+    })),
+  ]
   return (
     <Nav show={hideNavbarOnScroll}>
       <Box py={3} width={1} as="nav" bg="white">
@@ -82,7 +105,7 @@ const Navbar = (props) => {
           px={[3, null, 4]}
         >
           <Box width={100}>
-            <Menu menu={menu} />
+            <Menu menu={collectionMenu} />
           </Box>
 
           <Text
@@ -93,7 +116,7 @@ const Navbar = (props) => {
             ml="auto"
           >
             {logoUrl ? (
-              <img src={logoUrl} alt={storeName} />
+              <Logo src={logoUrl} alt={storeName} />
             ) : (
               <>
                 <ShoppingBag
@@ -133,7 +156,7 @@ const Navbar = (props) => {
         </Flex>
       </Box>
     </Nav>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
