@@ -119,7 +119,7 @@ const Search = () => {
                   type="text"
                   value={query}
                   autoFocus
-                  autoComplete={false}
+                  autoComplete="false"
                   onChange={search}
                   placeholder={searchInputLabel}
                 />
