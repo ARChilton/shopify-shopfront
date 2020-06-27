@@ -1,18 +1,18 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
-import { graphql } from 'gatsby';
+import React from 'react'
+import { Helmet } from 'react-helmet'
+import { graphql } from 'gatsby'
 
-import MainPage from './MainPage';
-import Layout from '../../components/Layout';
-import strings from './strings.json';
+import MainPage from './MainPage'
+import Layout from '../../components/Layout'
+import strings from './strings.json'
 
-const { pageTitleTemplate } = strings;
+const { pageTitleTemplate } = strings
 
-export default (props) => {
+export default props => {
   const {
     storeName,
     storeDescription,
-  } = props.data.store.siteMetadata.gatsbyStorefrontConfig;
+  } = props.data.store.siteMetadata.gatsbyStorefrontConfig
 
   return (
     <Layout>
@@ -21,12 +21,12 @@ export default (props) => {
       </Helmet>
       <MainPage {...props} />
     </Layout>
-  );
-};
+  )
+}
 
 export const mainPageQuery = graphql`
   query MainPageQuery($handles: [String], $enableWebp: Boolean!) {
-    collections: allShopifyCollection(filter: { handle: { in: $handles } }) {
+    collections: allShopifyCollection {
       nodes {
         handle
         title
@@ -110,4 +110,4 @@ export const mainPageQuery = graphql`
       }
     }
   }
-`;
+`
