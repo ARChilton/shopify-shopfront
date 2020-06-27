@@ -18,17 +18,16 @@ module.exports = {
   siteMetadata: {
     siteUrl: 'https://archilton.github.io/shopify-shopfront',
     gatsbyStorefrontConfig: {
-      storeName: 'archilton testing',
+      storeName: process.env.GATSBY_SHOP_NAME,
       storeDescription: 'Demo store description',
-      email: 'infoshop_theme.com',
-      company: 'ARChilton Demo',
-      location: 'Demoville',
-      address: '1 Centre St.',
-      phone: '+44 7777777777',
-      workingDays: 'Mon - Fri',
-      workingHours: '8AM - 6PM',
-      logoUrl:
-        'https://github.com/ARChilton/the-s-works/blob/master/the-s-works.jpg?raw=true',
+      email: process.env.GATSBY_SHOP_EMAIL,
+      company: process.env.GATSBY_SHOP_NAME,
+      location: process.env.GATSBY_SHOP_LOCATION,
+      address: process.env.GATSBY_SHOP_ADDRESS,
+      phone: process.env.GATBSY_SHOP_PHONE,
+      workingDays: process.env.GATSBY_SHOP_DAYS,
+      workingHours: process.env.GATSBY_SHOP_HOURS,
+      logoUrl: process.env.GATSBY_SHOP_LOGO,
       socialNetworks: [
         'https://facebook.com',
         'https://instagram.com',
@@ -48,7 +47,7 @@ module.exports = {
         'Viber',
       ],
       // googleAnalyticsId: '',
-      //
+      //  Main Page can contain:
       // carousel, collection, product
       //
       mainPage: [
@@ -74,67 +73,16 @@ module.exports = {
               name: 'Cars',
               type: 'collection',
               handle: 'cars',
-              textColor: 'white',
-              textBgColor: 'primary',
+              textColor: 'black',
+              textBgColor: 'white',
             },
-
-            // {
-            //   name: 'Silk Summer Top',
-            //   type: 'product',
-            //   handle: 'silk-summer-top',
-            //   textColor: 'white',
-            //   textBgColor: 'primary',
-            // },
           ],
-        },
-
-        {
-          name: 'bolt kit',
-          type: 'product',
-          handle: 'bolt-kit',
-          textColor: 'white',
-          textBgColor: 'primary',
-        },
-        {
-          name: 'dip spoiler',
-          type: 'product',
-          handle: 'dip-spoiler',
-          textColor: 'white',
-          textBgColor: 'primary',
-        },
-        {
-          name: 'suspension kits',
-          type: 'product',
-          handle: 'suspension-kit',
-          textColor: 'white',
-          textBgColor: 'primary',
-        },
-        {
-          name: 'bolt kit',
-          type: 'product',
-          handle: 'bolt-kit',
-          textColor: 'white',
-          textBgColor: 'primary',
-        },
-        {
-          name: 'dip spoiler',
-          type: 'product',
-          handle: 'dip-spoiler',
-          textColor: 'white',
-          textBgColor: 'primary',
-        },
-        {
-          name: 'suspension kits',
-          type: 'product',
-          handle: 'suspension-kit',
-          textColor: 'white',
-          textBgColor: 'primary',
         },
 
         // {
         //   name: 'Garden',
         //   type: 'collection',
-        //   handle: 'garden',
+        //   handle: 'suspension',
         //   textColor: 'white',
         //   textBgColor: 'primary',
         // },
@@ -185,19 +133,7 @@ module.exports = {
       menu: flattenMenu({
         name: 'Menu',
         type: 'top',
-        children: [
-          {
-            name: 'Bolt Kits',
-            type: 'collection',
-            handle: 'bolts',
-          },
-          {
-            name: 'Suspension Kits',
-            type: 'collection',
-            handle: 'suspension',
-          },
-          { name: 'Spoilers', type: 'collection', handle: 'spoilers' },
-        ],
+        children: [],
       }),
       footerLinks: [
         {
@@ -216,10 +152,10 @@ module.exports = {
           name: 'Refunds',
           link: '/policy/refundPolicy',
         },
-        {
-          name: 'External',
-          link: 'https://amazon.com',
-        },
+        // {
+        //   name: 'External',
+        //   link: 'https://amazon.com',
+        // },
       ],
       locales: 'en-UK',
       currency: 'GBP',
