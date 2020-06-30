@@ -10,8 +10,8 @@ jobs:
       - node/install-packages:
           pkg-manager: yarn
           with-cache: true
-          steps:
-            - run: yarn deploy
+
+      - run: yarn deploy
 
 workflows:
   build-and-deploy:
