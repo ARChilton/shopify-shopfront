@@ -14,7 +14,11 @@ GHPages.publish(
     branch: 'gh-pages',
     repo: `https://github.com/archilton/${repo}.git`,
   },
-  () => {
+  err => {
+    if (err) {
+      console.warn(err)
+      process.exit(1)
+    }
     console.log(
       `Deploy Complete! check it out here https://archilton.github.io/${repo}`
     )
