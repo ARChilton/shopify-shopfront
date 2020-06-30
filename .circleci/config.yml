@@ -6,12 +6,13 @@ jobs:
     executor:
       name: node/default
     steps:
-      - checkout
-      - node/install-packages:
-          pkg-manager: yarn
-          with-cache: true
-      - run: cd shop
-      - run: yarn deploy
+      - run: echo $GATSBY_DEMO_DEPLOY_REPO
+      # - checkout
+      # - node/install-packages:
+      #     pkg-manager: yarn
+      #     with-cache: true
+      # - run: cd shop
+      # - run: yarn deploy
 
 workflows:
   build-and-deploy:
