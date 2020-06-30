@@ -10,8 +10,7 @@ jobs:
       - node/install-packages:
           pkg-manager: yarn
           with-cache: true
-      - run: echo ${GATSBY_DEMO_DEPLOY_REPO}
-      # - run: yarn deploy
+      - run: yarn deploy
 
 workflows:
   build-and-deploy:
