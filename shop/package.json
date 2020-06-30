@@ -28,7 +28,7 @@
   "license": "MPL-2.0",
   "scripts": {
     "build": "gatsby build",
-    "deploy": "gatsby clean & gatsby build --prefix-paths && node ./scripts/deployToGithub.js",
+    "deploy": "gatsby clean & gatsby build --prefix-paths && node ./scripts/deployToGitHub",
     "develop": "gatsby develop",
     "start": "npm run develop",
     "serve": "gatsby serve",

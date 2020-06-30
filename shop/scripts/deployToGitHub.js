@@ -1,8 +1,8 @@
-const ghpages = require('gh-pages')
+const GHPages = require('gh-pages')
 require('dotenv').config({ path: `.env` })
 
 // replace with your repo url
-ghpages.publish(
+GHPages.publish(
   'public',
   {
     branch: 'gh-pages',
