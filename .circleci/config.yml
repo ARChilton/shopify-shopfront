@@ -7,11 +7,10 @@ jobs:
       name: node/default
     steps:
       - checkout
-      - node/with-cache:
+      - node/install-packages:
+          pkg-manager: yarn
+          with-cache: true
           steps:
-            - run: yarn
-            - run: ls
-            - run: pwd
             - run: yarn deploy
 
 workflows:
