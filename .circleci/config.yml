@@ -11,11 +11,7 @@ jobs:
           pkg-manager: yarn
           with-cache: true
       - run: cd shop
-      - run:
-          name: deploy
-          command: yarn deploy
-          environment:
-            GATSBY_DEMO_DEPLOY_REPO: the-s-works
+      - run: yarn deploy
 
 workflows:
   build-and-deploy:

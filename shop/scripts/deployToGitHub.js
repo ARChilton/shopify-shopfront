@@ -1,5 +1,5 @@
 const GHPages = require('gh-pages')
-require('dotenv').config({ path: `.env` })
+require('dotenv').config()
 
 const repo = process.env.GATSBY_DEMO_DEPLOY_REPO
 console.log(repo)
