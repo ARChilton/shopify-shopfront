@@ -10,7 +10,7 @@ jobs:
       - node/install-packages:
           pkg-manager: yarn
           with-cache: true
-
+      - run: cd shop
       - run: yarn deploy
 
 workflows:
