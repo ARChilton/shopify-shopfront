@@ -7,6 +7,9 @@ jobs:
       name: node/default
     steps:
       - checkout
+      - run: |
+          git config --global user.email $MY_EMAIL
+          git config --global user.name $MY_NAME
       - node/install-packages:
           pkg-manager: yarn
           with-cache: true

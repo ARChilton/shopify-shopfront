@@ -1,18 +1,19 @@
 const GHPages = require('gh-pages')
 require('dotenv').config()
 
-const repo = process.env.GATSBY_DEMO_DEPLOY_REPO
+const { GATSBY_DEMO_DEPLOY_REPO } = process.env.GATSBY_DEMO_DEPLOY_REPO
 console.log(repo)
-if (!repo) {
+if (!GATSBY_DEMO_DEPLOY_REPO) {
   console.warn('no env vars')
   process.exit(1)
 }
+
 // replace with your repo url
 GHPages.publish(
   'public',
   {
     branch: 'gh-pages',
-    repo: `https://github.com/archilton/${repo}.git`,
+    repo: `https://github.com/archilton/${GATSBY_DEMO_DEPLOY_REPO}.git`,
   },
   err => {
     if (err) {
@@ -20,7 +21,7 @@ GHPages.publish(
       process.exit(1)
     }
     console.log(
-      `Deploy Complete! check it out here https://archilton.github.io/${repo}`
+      `Deploy Complete! check it out here https://archilton.github.io/${GATSBY_DEMO_DEPLOY_REPO}`
     )
   }
 )
